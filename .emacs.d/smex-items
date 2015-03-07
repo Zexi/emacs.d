@@ -1,0 +1,19 @@
+
+;; ----- smex-history -----
+(
+ lisp-mode
+ window-numbering-mode
+ shell
+ cd
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (cd . 1)
+ (shell . 1)
+ (window-numbering-mode . 1)
+ (lisp-mode . 1)
+)
