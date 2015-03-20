@@ -1,2 +1,6 @@
-Move the file .emacs to '~', it's the init file when start emacs
-Move the  directory .emacs.d to '~', it's the dir of plugin and configure files.
+* How to install it:
+  Back up your emacs configure files, may '~/.emacs' and '~/.emacs.d/', then remove them.
+  Extract emacs.d to your home path.('~/')
+* Code structure:
+  Start init from '.emacs.d/init.el'.
+  Almost plugins are installed by melpa.
