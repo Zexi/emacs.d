@@ -1,0 +1,83 @@
+;; Object event/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "event/"
+  :tables
+  (list
+    (semanticdb-table "wakeup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("fcntl.h" include (:system-flag t) nil [1 19])
+            ("errno.h" include (:system-flag t) nil [20 38])
+            ("stdio.h" include (:system-flag t) nil [39 57])
+            ("stdlib.h" include (:system-flag t) nil [58 77])
+            ("signal.h" include (:system-flag t) nil [78 97])
+            ("getopt.h" include (:system-flag t) nil [98 117])
+            ("get_tmp_dir" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [137 142]))                  
+                :type "char")
+                nil [119 228])
+            ("get_pipe_dir" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [249 254]))                  
+                :type "char")
+                nil [230 401])
+            ("get_pid_file" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [422 427]))                  
+                :type "char")
+                nil [403 574])
+            ("basename" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [591 602]))                  
+                :type "char")
+                nil [576 695])
+            ("save_pid" function
+               (:pointer 1
+                :arguments 
+                  ( ("pid" variable (:type "int") (reparse-symbol arg-sub-list) [712 720]))                  
+                :type "void")
+                nil [697 896])
+            ("do_timeout" function
+               (:arguments 
+                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [914 920]))                  
+                :type "void")
+                nil [898 938])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [949 958])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [959 972]))                  
+                :type "int")
+                nil [940 2392]))          
+      :file "wakeup.c"
+      :pointmax 2393
+      :fsize 2392
+      :lastmodtime '(21694 550 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "Makefile"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("CC" variable (:default-value ("gcc")) nil [1 10])
+            ("PROG" variable (:default-value ("wakeup")) nil [10 24])
+            ("OBJECTS" variable (:default-value ("wakeup.o")) nil [24 43])
+            ("main" function (:arguments ("$(OBJECTS)")) nil [44 91])
+            ("clean" function nil nil [91 125]))          
+      :file "Makefile"
+      :pointmax 125
+      :fsize 124
+      :lastmodtime '(21694 550 0 0)
+      :unmatched-syntax '((shell-command 99 . 124) (bol 98 . 98))))
+  :file "!run!media!lzx!00f78830-dc05-4552-a814-383c8ceb7816!lzx!Code!src!LKP!lkp-tests!monitors!event!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -2,18 +2,31 @@
 ;; ----- smex-history -----
 (
  lisp-mode
- window-numbering-mode
+ semantic-force-refresh
  shell
- cd
- 5x5
- arp
- dbx
+ fa-show
+ helm-gtags-show-stack
+ package-list-packages
+ menu-bar-mode
 )
 
 ;; ----- smex-data -----
 (
- (cd . 1)
+ (ggtags-create-tags . 1)
+ (forward-sexp . 3)
+ (ggtags-find-reference . 3)
+ (ggtags-find-definition . 5)
+ (ggtags-find-other-symbol . 3)
+ (ggtags-find-tag-dwim . 4)
+ (ggtags-view-tag-history . 1)
+ (man . 2)
+ (recover-this-file . 1)
+ (menu-bar-mode . 1)
+ (package-list-packages . 1)
+ (helm-gtags-show-stack . 1)
+ (fa-show . 2)
  (shell . 1)
- (window-numbering-mode . 1)
+ (semantic-force-refresh . 2)
+ (ede . 1)
  (lisp-mode . 1)
 )

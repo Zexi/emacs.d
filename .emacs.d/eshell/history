@@ -1,0 +1,4 @@
+ls
+rm \#test.cpp\# 
+rm G*
+ls
