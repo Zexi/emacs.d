@@ -1,46 +1,19 @@
-;;;PACKAGE el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
-(unless (require 'el-get nil 'noerror)
-  (require 'package)
-  (add-to-list 'package-archives
-               '("melpa" . "http://melpa.org/packages/"))
-  (package-refresh-contents)
-  (package-initialize)
-  (package-install 'el-get)
-  (require 'el-get))
+;;; This file bootstraps the configuration, which is divided into
+;;; a number of other files.
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+;;----------------------------------------------------------------------------
+;; Bootstrap config
+;;----------------------------------------------------------------------------
+(require 'init-elpa)
 
-;; Simple package names
-(el-get-bundle helm)
-(el-get-bundle undo-tree)
-(el-get-bundle helm-swoop)
-
-(el-get 'sync)
-
-;;; add-to-list to load
-(add-to-list 'load-path "~/.emacs.d/custom")
-
-;;; misc configure
-(defalias 'yes-or-no-p 'y-or-n-p)
-(setq make-backup-files nil)
-(set-scroll-bar-mode nil)
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-(global-linum-mode t)
-(winner-mode t)
-(ido-mode t)
-
-;;; PACKAGE helm configure
-(require 'setup-helm)
-
-;; editing style configure
-;(require 'setup-editing)
-
-;; Package window-numbering
-(require 'window-numbering)
-(window-numbering-mode 1)
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+(require 'init-misc)
+(require 'init-helm)
+(require 'init-editing)
 
 ;; customize theme
 (custom-set-variables
