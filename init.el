@@ -14,6 +14,8 @@
 (require 'init-misc)
 (require 'init-helm)
 (require 'init-editing)
+(require 'init-markdown)
+(require 'init-auto-complete)
 
 ;; customize theme
 (custom-set-variables
