@@ -1,6 +1,6 @@
 # How to install it: #
-  Back up your emacs configure files, may '~/.emacs' and '~/.emacs.d/', then remove them.
-  Extract emacs.d to your home path.('~/')
+  Backup yours emacs configure files like ~/.emacs, ~/.emacs.d.
+  Then: git clone  https://github.com/Zexi/emacs.d.git ~/.emacs.d
 # Code structure: #
   Start init from '.emacs.d/init.el'.
-  Almost plugins are installed by melpa.
+  Almost plugins are installed by el-get.

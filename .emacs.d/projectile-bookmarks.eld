@@ -1,1 +1,0 @@
-("~/Documents/src/ORANGES'_自己动手写操作系统_光盘源代码/chapter3/f/" "~/Code/lkp-tests/" "/run/media/lzx/00f78830-dc05-4552-a814-383c8ceb7816/lzx/Code/src/LKP/lkp-tests/" "~/Code/bochs-2.6.7/" "~/Documents/src/linux-2.6.32.64/" "~/Code/rails-learing/demo/" "~/Documents/src/lkp-tests/" "~/Documents/src/linux-2.6.32.64/arch/arm/" "~/Documents/src/c-demo-project/")
