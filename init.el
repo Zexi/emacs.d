@@ -11,6 +11,12 @@
   (require 'el-get))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+
+;; Simple package names
+(el-get-bundle helm)
+(el-get-bundle undo-tree)
+(el-get-bundle helm-swoop)
+
 (el-get 'sync)
 
 ;;; add-to-list to load
@@ -30,7 +36,7 @@
 (require 'setup-helm)
 
 ;; editing style configure
-(require 'setup-editing)
+;(require 'setup-editing)
 
 ;; Package window-numbering
 (require 'window-numbering)
