@@ -16,6 +16,7 @@
 (require 'init-editing)
 (require 'init-markdown)
 (require 'init-auto-complete)
+(require 'init-slime)
 
 ;; customize theme
 (custom-set-variables
