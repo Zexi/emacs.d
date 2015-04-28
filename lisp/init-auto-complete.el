@@ -10,7 +10,7 @@
 (define-key ac-menu-map "C-n" 'ac-next)
 (define-key ac-menu-map "C-p" 'ac-previous)
 (ac-config-default)
-(setq ac-auto-start nil)
+(setq ac-auto-start t)
 
 (defun ac-auto-enable()
   (interactive)
@@ -66,8 +66,8 @@
   (add-to-list 'achead:include-directories '"/usr/bin/../lib/clang/3.6.0/include")
   (add-to-list 'achead:include-directories '"/usr/include"))
 
-(add-hook 'c-mode-hook 'my:ac-c-headers-init)
-(add-hook 'c-mode-hook 'my:ac-c-mode-setup)
+(add-hook 'c-mode-common-hook 'my:ac-c-headers-init)
+(add-hook 'c-mode-common-hook 'my:ac-c-mode-setup)
 (setq ac-disable-faces nil)
 (global-auto-complete-mode t)
 

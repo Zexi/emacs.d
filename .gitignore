@@ -12,3 +12,6 @@ el-get
 
 #ac-comphist
 ac-comphist.dat
+
+#python
+.python-environments
