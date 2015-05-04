@@ -9,6 +9,7 @@
 (require-package 'comment-dwim-2)
 (require-package 'anzu)
 (require-package 'iedit)
+(require-package 'duplicate-thing)
 
 ;; GROUP: Editing -> Editing Basics
 
@@ -138,14 +139,14 @@
 (global-set-key (kbd "M-%") 'anzu-query-replace)
 (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 
-;; ;; PACKAGE: iedit
-;; (setq iedit-toggle-key-default nil)
-;; (require 'iedit)
-;; (global-set-key (kbd "C-;") 'iedit-mode)
+;; PACKAGE: iedit
+(setq iedit-toggle-key-default nil)
+(require 'iedit)
+(global-set-key (kbd "C-;") 'iedit-mode)
 
-;; ;; PACKAGE: duplicate-thing
-;; (require 'duplicate-thing)
-;; (global-set-key (kbd "M-c") 'duplicate-thing)
+;; PACKAGE: duplicate-thing
+(require 'duplicate-thing)
+(global-set-key (kbd "M-c") 'duplicate-thing)
 
 ;; Customized functions
 (defun prelude-move-beginning-of-line (arg)
@@ -309,6 +310,11 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; when you press RET, the curly braces automatically add another newline
 (sp-with-modes '(c-mode c++-mode)
+  (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
+  (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
+                                            ("* ||\n[i]" "RET"))))
+
+(sp-with-modes '(ruby-mode)
   (sp-local-pair "{" nil :post-handlers '(("||\n[i]" "RET")))
   (sp-local-pair "/*" "*/" :post-handlers '((" | " "SPC")
                                             ("* ||\n[i]" "RET"))))

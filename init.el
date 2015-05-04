@@ -13,6 +13,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-misc)
 (require 'init-helm)
+(require 'init-helm-gtags)
 (require 'init-editing)
 (require 'init-markdown)
 (require 'init-auto-complete)
