@@ -20,6 +20,7 @@
 (require 'init-slime)
 (require 'init-python)
 (require 'init-ruby)
+(require 'init-lua)
 
 ;; customize theme
 (custom-set-variables
