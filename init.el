@@ -16,6 +16,7 @@
 (require 'init-helm-gtags)
 (require 'init-editing)
 (require 'init-markdown)
+(require 'init-latex)
 (require 'init-auto-complete)
 (require 'init-slime)
 (require 'init-python)
