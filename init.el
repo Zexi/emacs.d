@@ -22,6 +22,7 @@
 (require 'init-python)
 (require 'init-ruby)
 (require 'init-lua)
+(require 'init-octave)
 (require 'init-theme)
 
 ;; Available C style:
