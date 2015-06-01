@@ -16,11 +16,8 @@
 (setq global-mark-ring-max 5000         ; increase mark ring to contains 5000 entries
       mark-ring-max 5000                ; increase kill ring to contains 5000 entries
       mode-require-final-newline t      ; add a newline to end of file
-      tab-width 4                       ; default to 4 visible spaces to display a tab
+      tab-width 8                       ; default to 8 visible spaces to display a tab
       )
-
-(add-hook 'sh-mode-hook (lambda ()
-                          (setq tab-width 4)))
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -30,6 +27,13 @@
 (setq-default indent-tabs-mode nil)
 (delete-selection-mode)
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+;; sh-mode use indent-tabs-mode
+(add-hook 'sh-mode-hook (lambda ()
+			  (setq sh-indentation 8
+				tab-width 8
+				sh-basic-offset 8
+				indent-tabs-mode t)))
 
 ;; GROUP: Editing -> Killing
 (setq kill-ring-max 5000 ; increase kill-ring capacity
@@ -60,7 +64,6 @@
 ;; GROUP: Editing -> Indent -> Clean Aindent
 (require 'clean-aindent-mode)
 (add-hook 'prog-mode-hook 'clean-aindent-mode)
-
 
 ;; PACKAGE: dtrt-indent
 (require 'dtrt-indent)

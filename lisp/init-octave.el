@@ -2,10 +2,10 @@
 (require-package 'ac-octave)
 
 (add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
-(setq-default octave-blink-matching-block t)
-(setq-default octave-block-offset 4)
-(setq-default octave-continuation-offset 4)
-(setq-default octave-continuation-string "\\")
+;(setq-default octave-blink-matching-block t)
+;(setq-default octave-block-offset 4)
+;(setq-default octave-continuation-offset 4)
+;(setq-default octave-continuation-string "\\")
 
 (require 'ac-octave)
 (defun ac-octave-mode-setup ()
