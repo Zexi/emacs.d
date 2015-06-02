@@ -34,6 +34,11 @@
 				tab-width 8
 				sh-basic-offset 8
 				indent-tabs-mode t)))
+;; awk-mode use indent-tabs-mode
+(add-hook 'awk-mode-hook (lambda ()
+                           (setq tab-width 8
+                                 c-basic-offset 8
+                                 indent-tabs-mode t)))
 
 ;; GROUP: Editing -> Killing
 (setq kill-ring-max 5000 ; increase kill-ring capacity
