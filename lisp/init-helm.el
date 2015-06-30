@@ -1,5 +1,6 @@
 (require-package 'helm)
 (require-package 'helm-swoop)
+(require-package 'helm-ag)
 
 (require 'helm-config)
 (require 'helm-grep)
