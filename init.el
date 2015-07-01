@@ -23,6 +23,7 @@
 (require 'init-lua)
 (require 'init-octave)
 (require 'init-theme)
+(require 'init-debug)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
