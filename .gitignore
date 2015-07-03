@@ -17,4 +17,7 @@ ac-comphist.dat
 #python
 .python-environments
 
+#irony
+irony/
+
 eshell
