@@ -10,7 +10,7 @@
 (define-key ac-menu-map "C-n" 'ac-next)
 (define-key ac-menu-map "C-p" 'ac-previous)
 (ac-config-default)
-(setq ac-auto-start nil)
+(setq ac-auto-start t)
 
 (defun ac-auto-enable()
   (interactive)
@@ -38,31 +38,25 @@
 (add-hook 'css-mode-hook 'ac-css-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
-;;clang stuff
-(require 'auto-complete-clang)
-
-(defun my:ac-c-mode-setup ()
+;; auto-complete-clang setup
+(defun auto-complete-clang-setup()
+  (require 'auto-complete-clang)
+  (setq command "echo | g++ -v -x c++ -E - 2>&1 |
+		grep -A 20 starts | grep ' /usr/.*'")
   (setq ac-clang-flags
-        (mapcar(lambda (item)(concat "-I" item))
-               (split-string
-                "
- /usr/local/include
- /usr/include
-")))
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+        (mapcar (lambda (item) (concat "-I" item))
+                (split-string
+                 (shell-command-to-string command))))
+  ;; completion for C/C++ macros
+  (push "-code-completion-macros" ac-clang-flags)
+  (push "-code-completion-patterns" ac-clang-flags)
+  (dolist (mode-hook '(c-mode-hook c++-mode-hook))
+    (add-hook mode-hook
+              (lambda ()
+                (add-to-list 'ac-sources 'ac-source-clang)))))
 
-(defun my:ac-c-headers-init()
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  ;(add-to-list 'achead:include-directories '"/usr/bin/../lib64/gcc/x86_64-unknown-linux-gnu/4.9.2/../../../../include/c++/4.9.2")
-  ;(add-to-list 'achead:include-directories '"/usr/bin/../lib64/gcc/x86_64-unknown-linux-gnu/4.9.2/../../../../include/c++/4.9.2/x86_64-unknown-linux-gnu")
-  ;(add-to-list 'achead:include-directories '"/usr/bin/../lib64/gcc/x86_64-unknown-linux-gnu/4.9.2/../../../../include/c++/4.9.2/backward")
-  ;(add-to-list 'achead:include-directories '"/usr/local/include")
-  ;(add-to-list 'achead:include-directories '"/usr/bin/../lib/clang/3.6.1/include")
-  (add-to-list 'achead:include-directories '"/usr/include"))
+(auto-complete-clang-setup)
 
-(add-hook 'c-mode-common-hook 'my:ac-c-headers-init)
-(add-hook 'c-mode-common-hook 'my:ac-c-mode-setup)
 (setq ac-disable-faces nil)
 (global-auto-complete-mode t)
 
