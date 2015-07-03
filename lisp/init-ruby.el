@@ -3,9 +3,9 @@
 
 ;; robe
 (autoload 'robe-mode "robe" "Code navigation, documentation lookup and completion for Ruby" t nil)
-(autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
+;(autoload 'ac-robe-setup "ac-robe" "auto-complete robe" nil nil)
 (add-hook 'ruby-mode-hook 'robe-mode)
-(add-hook 'robe-mode-hook 'ac-robe-setup)
+;(add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (add-to-list 'auto-mode-alist
              '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
