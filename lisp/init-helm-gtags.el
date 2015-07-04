@@ -1,5 +1,4 @@
 (require-package 'helm-gtags)
-(require 'helm-gtags)
 
 (setq
  helm-gtags-ignore-case t
@@ -9,6 +8,8 @@
  helm-gtags-prefix-key "\C-cg"
  helm-gtags-suggested-key-mapping t
  )
+
+(require 'helm-gtags)
 
 ;; Enable helm-gtags-mode in Dired so you can jump to any tag
 ;; when navigate project tree with Dired
@@ -22,10 +23,17 @@
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'java-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'emacs-lisp-mode-hook 'helm-gtags-mode)
+(add-hook 'ruby-mode-hook 'helm-gtags-mode)
+(add-hook 'sh-mode-hook 'helm-gtags-mode)
+(add-hook 'python-mode-hook 'helm-gtags-mode)
 
 ;; key bindings
 (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
 (define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
+(define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+(define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+(define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
 (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
 (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
