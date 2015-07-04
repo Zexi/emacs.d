@@ -21,3 +21,8 @@ ac-comphist.dat
 irony/
 
 eshell
+
+#gtags
+GTAGS
+GRTAGS
+GPATH
