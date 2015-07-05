@@ -25,6 +25,7 @@
 (require 'init-octave)
 (require 'init-theme)
 (require 'init-debug)
+(require 'init-session)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
