@@ -27,6 +27,7 @@
 (require 'init-debug)
 (require 'init-session)
 (require 'init-w3m)
+(require 'init-dict)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
