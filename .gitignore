@@ -26,3 +26,11 @@ eshell
 GTAGS
 GRTAGS
 GPATH
+
+#desktop and session
+.session
+.emacs.desktop
+.emacs.desktop.lock
+
+#w3m
+url/
