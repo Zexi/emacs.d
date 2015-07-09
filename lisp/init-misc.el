@@ -27,4 +27,7 @@
 (add-to-list 'auto-mode-alist '("\\.link\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("\\.automount\\'" . conf-unix-mode))
 
+;; install smart-compile for c/c++ compile
+(require-package 'smart-compile)
+
 (provide 'init-misc)

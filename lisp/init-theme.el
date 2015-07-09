@@ -11,7 +11,7 @@
 
 ;;(load-theme 'monokai t)
 (require 'moe-theme)
-(require 'moe-dark-theme)
-;(require 'alect-black-alt-theme)
+;;(require 'moe-dark-theme)
+(require 'alect-black-alt-theme)
 ;;(require 'moe-theme-switcher)
 (provide 'init-theme)
